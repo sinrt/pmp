@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{email.activation.title}">JHipster activation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+    </head>
+    <body>
+        <p
+            style="margin-right: 15%;text-align: right;"
+            th:text="#{email.activation.greeting(${user.login})}">
+            Dear
+        </p>
+        <p
+            style="margin-right: 15%;text-align: right;">
+            <a th:text="#{email.activation.text3}">http://rubru.me</a>
+        </p>
+        <p
+            style="margin-right: 15%;text-align: right;">
+            <a href="http://rubru.me">http://rubru.me</a>
+        </p>
+        <p
+            style="margin-right: 15%;text-align: right;">
+            <span th:text="#{email.activation.text2}">Regards, </span>
+            <br/>
+            <em th:text="#{email.signature}">JHipster.</em>
+        </p>
+    </body>
+</html>

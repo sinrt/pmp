@@ -1,0 +1,47 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1587797421751-1">
+        <createTable tableName="openvidu_session">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="openvidu_sessionPK"/>
+            </column>
+            <column name="session_id" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_date" type="datetime"/>
+            <column name="duration" type="BIGINT"/>
+            <column name="end_reason" type="VARCHAR(255)"/>
+
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1587797421751-2">
+        <createTable tableName="openvidu_session_participant">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="openvidu_session_participantPK"/>
+            </column>
+            <column name="participant_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="participant_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="participant_type" type="VARCHAR(20)"/>
+            <column name="duration" type="BIGINT"/>
+            <column name="join_date_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="leave_date_time" type="datetime"/>
+            <column name="leave_reason" type="VARCHAR(255)"/>
+            <column name="location" type="VARCHAR(100)"/>
+
+            <column name="platform" type="VARCHAR(255)"/>
+            <column name="server_data" type="VARCHAR(255)"/>
+            <column name="openvidu_session_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

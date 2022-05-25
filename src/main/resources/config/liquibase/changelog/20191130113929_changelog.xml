@@ -1,0 +1,91 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Sina-Pc (generated)" id="1575114001866-1">
+        <addColumn tableName="purchase_log">
+            <column name="no_time_limit" type="bit"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1575114001866-3">
+        <addColumn tableName="service_type">
+            <column name="no_time_limit" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1575462680116-1">
+        <addColumn tableName="purchase_log">
+            <column name="optional_title" type="bit"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1575462680116-3">
+        <addColumn tableName="service_type">
+            <column name="optional_title" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1577015336505-1">
+        <addColumn tableName="signal_server_meeting_log">
+            <column name="incomplete_status" type="bit"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-1">
+        <addColumn tableName="purchase_log">
+            <column name="screen_share_frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-3">
+        <addColumn tableName="service_type">
+            <column name="screen_share_frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-4">
+        <addColumn tableName="purchase_log">
+            <column name="screen_share_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-6">
+        <addColumn tableName="service_type">
+            <column name="screen_share_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-7">
+        <addColumn tableName="purchase_log">
+            <column name="screen_share_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-9">
+        <addColumn tableName="service_type">
+            <column name="screen_share_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-1">
+        <addColumn tableName="purchase_log">
+            <column name="resolution_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-3">
+        <addColumn tableName="service_type">
+            <column name="resolution_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-4">
+        <addColumn tableName="purchase_log">
+            <column name="resolution_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-6">
+        <addColumn tableName="service_type">
+            <column name="resolution_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580624768836-1">
+        <addColumn tableName="classroom">
+            <column name="is_guest_with_subscriber_role" type="bit"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

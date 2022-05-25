@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1610876784112-1">
+        <addColumn tableName="purchase_status">
+            <column name="authorized_hours_in_month" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1610876784112-2">
+        <addColumn tableName="purchase_status">
+            <column name="authorized_hours_in_week" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1610876784112-3">
+        <addColumn tableName="purchase_status">
+            <column name="concurrent_recording_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1610876784112-4">
+        <addColumn tableName="purchase_status">
+            <column name="user_login" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1610876784112-5">
+        <dropNotNullConstraint columnDataType="int" columnName="authorized_hours_in_mount" tableName="service_type"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1610876784112-6">
+        <dropNotNullConstraint columnDataType="int" columnName="authorized_hours_in_week" tableName="service_type"/>
+    </changeSet>
+</databaseChangeLog>

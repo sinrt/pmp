@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1598707902321-1">
+        <createTable tableName="classroom_blocked_client">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="classroom_blocked_clientPK"/>
+            </column>
+            <column name="block_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="blocker_user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="blocked_user_id" type="BIGINT">
+                <constraints nullable="true"/>
+            </column>
+            <column name="client_id" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="participant_name" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="classroom_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598707902321-2">
+        <addForeignKeyConstraint baseColumnNames="classroom_id" baseTableName="classroom_blocked_client" constraintName="FK_CLASSROOM_BLOCKED" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="classroom"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598707902321-3">
+        <addColumn tableName="openvidu_session_participant">
+            <column name="client_id" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

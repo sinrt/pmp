@@ -1,0 +1,402 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+logging:
+    level:
+        ROOT: DEBUG
+        io.github.jhipster: DEBUG
+        com.pmp.nwms: DEBUG
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        enabled: false # By default, the JHipster Registry is not used in the "dev" profile
+        service-url:
+            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+
+spring:
+    servlet:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
+            enabled: true
+    profiles:
+        active: dev
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use Webpack dev server + BrowserSync for livereload
+    jackson:
+        serialization.indent_output: true
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://localhost:3306/nwms?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+        username: root
+        password: root
+        hikari:
+            auto-commit: false
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+            maximum-pool-size: 20
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+    liquibase:
+        contexts: dev
+    mail:
+        host: mail.rubru.me
+        port: 587
+        username: rubru-support@rubru.me  #Replace this field with your Yahoo username.
+        password: Mehd@de66403503          #Replace this field with your Yahoo password.
+        protocol: smtp
+        tls: false
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: false
+            ssl.trust: mail.rubru.me
+    messages:
+        cache-duration: PT1S # 1 second, see the ISO 8601 standard
+    thymeleaf:
+        cache: false
+    zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
+        base-url: http://localhost:9411
+        enabled: false
+        locator:
+            discovery:
+                enabled: true
+# ===================================================================
+# To enable SSL in development, uncomment the the "server.ssl" properties below.
+#
+# JHipster has generated a self-signed certificate, which will be used to encrypt traffic.
+# As your browser will not understand this certificate, you will need to import it.
+#
+# Another (easiest) solution with Chrome is to enable the "allow-insecure-localhost" flag
+# at chrome://flags/#allow-insecure-localhost
+# ===================================================================
+server:
+    port: 8080
+#    ssl:
+#        key-store: classpath:config/tls/keystore.p12
+#        key-store-password: password
+#        key-store-type: PKCS12
+#        key-alias: selfsigned
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+jhipster:
+    http:
+        version: V_1_1 # To use HTTP/2 you will need SSL support (see above the "server.ssl" configuration)
+    cache: # Cache configuration
+        ehcache: # Ehcache configuration
+            time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
+            max-entries: 100 # Number of objects in each cache entry
+    # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        exposed-headers: "Authorization,Link,X-Total-Count"
+        allow-credentials: true
+        max-age: 1800
+    security:
+        authentication:
+            jwt:
+                # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+                base64-secret: OGE5NmZjMjJjODlmMjE1NGZlNGFjZTY0YWIwYjdmZTRhMWRjYmQ5NWUwZTY5MTZmY2NlZGFlMjI2NmVlZDRiNzFmNWJiYmM2MTI2ODg0MWVmMTg2OGFkZjUwN2IyNWJiZjE2M2MwNDI3ZjM4NTNhZDdmNTBmMTRhOGY0ODNlNWM=
+                # Token is valid 24 hours
+                token-validity-in-seconds: 86400
+                token-validity-in-seconds-for-remember-me: 2592000
+    mail: # specific JHipster mail property, for standard properties see MailProperties
+        from: rubru-support@rubru.me
+        base-url: http://127.0.0.1:9000
+    metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
+        jmx:
+            enabled: true
+        logs: # Reports Dropwizard metrics in the logs
+            enabled: false
+            report-frequency: 60 # in seconds
+    logging:
+        logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+            enabled: false
+            host: localhost
+            port: 5000
+            queue-size: 512
+
+    # ===================================================================
+    # Application specific properties
+    # Add your own application properties here, see the ApplicationProperties class
+    # to have type-safe configuration, like in the JHipsterProperties above
+    #
+    # More documentation is available at:
+    # https://www.jhipster.tech/common-application-properties/
+    # ===================================================================
+
+    # application:
+
+#conf:
+#    server:
+#        address: 0.0.0.0
+#        ssl:
+#            enabled: true
+#        port: 4443
+rubru:
+    #    publicurl: local
+    #    cdr: true
+    #    recording:
+    #        version: 2.9.0
+    #        enabled: false
+    #        path: /home/mehdade/rubru/recordings/
+    #        public-access: false
+    #        notification: publisher_moderator
+    #        custom-layout: /home/mehdade/rubru/custom-layout/
+    #        autostop-timeout: 120
+    #    streams:
+    #        video:
+    #            max-recv-bandwidth: 150
+    #            min-recv-bandwidth: 30
+    #            max-send-bandwidth: 1000
+    #            min-send-bandwidth: 80
+    wsUrl: 172.20.10.12:446
+    #        plane: 192.168.1.108:446
+    #        nginx: 192.168.1.108:446
+    imageprofile:
+        path: /home/mehdade/imageprofile/
+
+    rubruexlspath:
+        path: /home/mehdade/imageprofile/
+
+    remove:
+        logs:
+            scheduler:
+                cron: 0 0 3 * * ?
+                enabled: true
+                keep:
+                    max:
+                        day:
+                            count: 10
+#kms:
+#    uris: ws://185.50.39.83:8888/kurento
+#    stats-enabled: false
+#free_plan_credit_day: 25
+app:
+    web:
+        url: https://172.16.1.24:446
+
+jackrabbit:
+    rmi:
+        root: http://localhost:8080/jackrabbit/rmi
+    username: admin
+    password: admin
+
+
+fileupload:
+    max:
+        file:
+            size: 10
+            countPerSession: 10000
+
+
+send:
+    sms:
+        service:
+            wsdl-url: http://api.payamak-panel.com/post/Send.asmx?wsdl
+            rest-url: http://rest.payamak-panel.com/api/SendSMS/SendSMS
+            username: "09192127062"
+            password: Mehdade66403503**
+            from-number: 500010609997
+            is-flash: false
+            use-soap: true                  # sms config for use soap or rest url
+# sms config end
+connection:
+    pool:
+        scheduler:
+            cron: 0 * * * * *
+file:
+    to:
+        slide:
+            convert:
+                temp:
+                    folder: D:\111\tmp
+sliding:
+    image:
+        dpi: 150
+
+    max:
+        page:
+            count: 50
+
+classroom:
+    status:
+        data:
+            holder:
+                cleanup:
+                    cron: 0 0 1 * * ?
+
+    survey:
+        option:
+            min:
+                count: 2
+            max:
+                count: 3
+    file:
+        remover:
+            scheduler:
+                cron: 0 0 2 * * ?
+                enabled: true
+                keep:
+                    max:
+                        day:
+                            count: 10
+close:
+    open:
+        participants:
+            after:
+                session:
+                    closed:
+                        scheduler:
+                            cron: 0 0 6 * * ?
+store:
+    recording:
+        files:
+            scheduler:
+                enabled: true
+                cron: 0 0 2 * * ?
+signal:
+    server:
+        username: OPENVIDUAPP
+        password: RUBRU_ME_SECRET_PASS
+        instant:
+            delete:
+                recordings: true
+remove:
+    recording:
+        files:
+            scheduler:
+                enabled: true
+                cron: 0 0 4 * * ?
+    logs:
+        scheduler:
+            keep:
+                max:
+                    day:
+                        count: 2
+            enabled: true
+            cron: 0 0 3 * * ?
+
+
+keep:
+    recordings:
+        max:
+            day:
+                count: 7
+
+
+
+finish:
+    classroom:
+        inform:
+            times: 5,3,1
+            signal:
+                type: END_SESSION_INFORM
+            max:
+                time: 5
+            timer:
+                delay: 1
+                period: 1
+max:
+    archive:
+        count:
+            per:
+                run: 1000
+end:
+    session:
+        close:
+            timer:
+                enabled: true
+        send:
+            signal:
+                timer:
+                    enabled: true
+
+
+archive:
+    rubru:
+        session:
+            info:
+                scheduler:
+                    cron: 0 0 1 * * ?
+                    enabled: true
+                after:
+                    months: 6
+
+nwms:
+    aop:
+        logging:
+            enabled: true
+
+mongodb:
+    rubruLogs:
+        host: localhost
+        port: 27017
+        database: rubru-openvidu
+        username: rubru
+        password: rubru!mongo
+    coreLogs:
+        host: localhost
+        port: 27017
+        database: rubru-nwms
+        username: rubru
+        password: rubru!mongo
+
+
+passargad:
+    ipg:
+        rsakeyvalue:
+            modulus: tf2txH1ob2wZZWmeVlEle9OFaNC1Z9m/Y2ul1IFqb3CXe/0uqQLFNi7+Ll0lIMcFC0KpnDHJ0q/vwzXM9p6UBVxspfFtMV5VKuDQQniZahwF3ZJi0NaayblSgW8hrZjphp/b4Wl8aY6UwA2D2Anbxh9pN94l+2jWqt0pjaADM5E=
+            exponent: AQAB
+            p: 9E82wqkfIvPPgD3UhusZFRUMDKmbeNFMF14VkROdgvIirKKzbDz3G/+rx11qLDnUiHGRXfBCPN0FUvOe7qmiAw==
+            q: vrMQfYGYM9SAEMOmsEVJoJAEhfWWlnyoBR72sq6vLlEd3I+S1BmCARlwLmNqcCr42KBjj/gp8oKcriwtYGaJ2w
+            dp: 57LAknjmaLWl00/QYWxRy2a8mL26Dykf6wF1nrNlrKyLKgLb+wkOqmUduuPjL7Jg2E4suVSE3UgYJoWZ82q5lQ==
+            dq: hX7ozlNIbxAVTqcIK2F1t1baM8TGVDaTkHIqlM9AhxX1548CZEQvBAIAzBiATGForo0o5YH+K2xProXyhgeB/Q==
+            inverseq: xRYgs3oWdQb+t7IE4zJoEkAiQLA882zP+Jg7bRAvsgC1caPOBWqX+ja5FMjfaaGLEgjbZgRg+PB8fwSL8BXpnQ==
+            d: Je1aO2rPSvlCSao7P03l++pXEUL9q0jr4/JZOvJFljfmugZHpR1YsDQW8N6kkDIp0PDxnAWcQ/Y6h3o83uCphCHYcyeJ7RiJuGLnewscslgZsF9VC1AJqTLoIWUKmY1tT4oFirqGl5du5wG0uJAljS1Nzjt2+NRHBGem+My/+Uk=
+
+        root:
+            address: https://pep.shaparak.ir
+        gettoken:
+            address: /Api/v1/Payment/GetToken
+        checktransactionresult:
+            address: /Api/v1/Payment/CheckTransactionResult
+        verifypayment:
+            address: /Api/v1/Payment/VerifyPayment
+        terminalcode: 1723300
+        merchantcode: 4537157

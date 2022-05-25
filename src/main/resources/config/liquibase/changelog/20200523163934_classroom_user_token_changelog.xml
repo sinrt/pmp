@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1590251987773-1">
+        <addColumn tableName="classroom_students">
+            <column name="full_name" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1590251987773-2">
+        <addColumn tableName="classroom_students">
+            <column name="max_use_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1590251987773-3">
+        <addColumn tableName="classroom_students">
+            <column name="needs_login" type="bit">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1590251987773-4">
+        <addColumn tableName="classroom_students">
+            <column name="token" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1590251987773-5">
+        <addColumn tableName="classroom">
+            <column name="use_enter_token" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1590251987773-6">
+        <addColumn tableName="purchase_status">
+            <column name="total_concur_users" type="integer"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

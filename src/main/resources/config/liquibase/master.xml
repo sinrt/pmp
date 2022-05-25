@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/20191014123918_added_entity_DiscountsDef.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191020073255_added_entity_PurchaseLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190908074605_added_entity_SuggestionsBox.xml" relativeToChangelogFile="false"/>
+<!--    <include file="config/liquibase/changelog/20190303094324_added_entity_PurchaseStatus.xml" relativeToChangelogFile="false"/>-->
+    <!--    <include file="config/liquibase/changelog/20191207083134_added_entity_SignalServerLog.xml" relativeToChangelogFile="false"/>-->
+    <include file="config/liquibase/changelog/20191209074258_added_entity_SignalServerMeetingLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190625083559_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191130113929_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021090134_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425065009_add_openvidu_webhook_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200505065009_add_classroom_file_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509125234_add_more_data_openvidu_session_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200523163934_classroom_user_token_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617163934_openvidu_webhook_token_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200726132103_openvidu_session_participant_add_user_id_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200812122541_add_file_transfer_return_url_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200828162716_classroom_add_new_fields_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200829133128_add_classroom_blocked_table_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200905171728_add_classroom_file_slide_table_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200927173550_add_ws_url_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201001161125_add_delete_tables_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201014141558_classroom_add_new_felds_2_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201014155003_add_quality_feilds_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201031091350_add_app_url_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201104171759_add_survay_fields.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201107092947_purchase_status_add_recording_fields_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201205172604_add_classroom_recording_mode_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201222134216_add-auto-login-field.xml" relativeToChangelogFile="false"/>
+
+    <include file="config/liquibase/changelog/20200930164114_add_generate_defualt_name_col_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201030092222_add_special_link_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201228085301_classroom_recording_info_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210107182200_course_title_constraint_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210107182200_alter_classroom_recording_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210108165748_dynamic_user_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210109173754_add_participant_key_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210116172153_add_sessionActive_to_classroom_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210117094605_service_type_purchase_status_alters_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210125104905_insert_api_auth_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210126145844_add_unique_constraint_session_uuid_name_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210129080027_add_signal_session_end_to_classroom_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210129125701_create_check_status_indexes_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210129140039_add_rubru_session_archive_tables_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210130092311_add_audit_fields_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210130120016_add_org_audit_fields_to_del_tables_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210130130052_add_rubru_session_fields_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210210165201_classroom_add_return_url_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210228081759_add_outerManage _to_classroom_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210307140144_change_classroom_name_length_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210423120353_add_record_hash_code_to_user_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210928055845_classroom_add_sound_video_setting_changelog.xml" relativeToChangelogFile="false"/>
+    <!--    <include file="config/liquibase/changelog/20191014112803_changelog.xml" relativeToChangelogFile="false"/>-->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

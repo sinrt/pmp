@@ -1,0 +1,162 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1601568697912-1">
+        <createTable tableName="del_classroom">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="connection_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course_id" type="BIGINT"/>
+            <column name="creator_id" type="BIGINT"/>
+            <column name="disable_file_transfer" type="BIT"/>
+            <column name="enable_subscriber_direct_enter" type="BIT"/>
+            <column name="finish_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="framerate" type="INT"/>
+            <column name="guest_password" type="VARCHAR(50)"/>
+            <column name="guest_session" type="BIT"/>
+            <column name="guest_session_pass" type="BIT"/>
+            <column name="hide_global_chat" type="BIT"/>
+            <column name="hide_participants_list" type="BIT"/>
+            <column name="hide_private_chat" type="BIT"/>
+            <column name="hide_publish_permit" type="BIT"/>
+            <column name="hide_sound_sensitive" type="BIT"/>
+            <column name="is_guest_with_subscriber_role" type="BIT"/>
+            <column name="last_modifier_id" type="BIGINT"/>
+            <column name="jhi_lock" type="BIT"/>
+            <column name="master_id" type="BIGINT"/>
+            <column name="max_user_count" type="INT"/>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="publisher_must_enter_first" type="BIT"/>
+            <column name="resolution" type="VARCHAR(255)"/>
+            <column name="session_uuid_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="use_enter_token" type="BIT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-2">
+        <createTable tableName="del_classroom_students">
+            <column name="student_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="classroom_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)"/>
+            <column name="full_name" type="VARCHAR(100)"/>
+            <column name="max_use_count" type="INT"/>
+            <column name="needs_login" type="BIT"/>
+            <column name="token" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-3">
+        <createTable tableName="del_course">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creator_id" type="BIGINT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="finish_time" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modifier_id" type="BIGINT"/>
+            <column name="start_time" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="teacher_pan" type="BIT"/>
+            <column name="title" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-4">
+        <createTable tableName="del_course_student">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-5">
+        <createTable tableName="del_jhi_user">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TINYBLOB"/>
+            <column name="activated" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="gender" type="BIT"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(6)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="organization_level_id" type="BIGINT"/>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="personal_code" type="VARCHAR(10)"/>
+            <column name="phone_number" type="VARCHAR(50)"/>
+            <column name="reset_date" type="TINYBLOB"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+            <column name="return_url" type="VARCHAR(255)"/>
+            <column name="showy_name" type="VARCHAR(255)"/>
+            <column name="validity_date" type="TINYBLOB"/>
+            <column name="ws_url" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-6">
+        <createTable tableName="del_jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-7">
+        <addPrimaryKey columnNames="user_id, authority_name" tableName="del_jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-8">
+        <addPrimaryKey columnNames="id" constraintName="del_classroomPK" tableName="del_classroom"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-9">
+        <addPrimaryKey columnNames="student_id, classroom_id" constraintName="del_classroom_studentsPK" tableName="del_classroom_students"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-10">
+        <addPrimaryKey columnNames="id" constraintName="del_coursePK" tableName="del_course"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-11">
+        <addPrimaryKey columnNames="user_id, course_id" constraintName="del_course_studentPK" tableName="del_course_student"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-12">
+        <addPrimaryKey columnNames="id" constraintName="del_jhi_userPK" tableName="del_jhi_user"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1601568697912-13">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="del_jhi_user_authority" constraintName="FKpj9dkmiqprxl0avfqxq6w5t0c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="del_jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

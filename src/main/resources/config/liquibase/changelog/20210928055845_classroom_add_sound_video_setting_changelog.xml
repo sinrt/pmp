@@ -1,0 +1,70 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1632808751457-1">
+        <addColumn tableName="classroom">
+            <column name="non_manager_enter_sound_off" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751457-2" >
+        <addColumn tableName="classroom">
+            <column name="non_manager_enter_video_off" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="hossein (generated)" id="1632808751458-3" >
+        <addColumn tableName="del_classroom">
+            <column name="moderator_auto_login" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-4" >
+        <addColumn tableName="del_classroom">
+            <column name="secret_key" type="varchar(200)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-5" >
+        <addColumn tableName="del_classroom">
+            <column name="session_active" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-6" >
+        <addColumn tableName="del_classroom">
+            <column name="signal_session_end" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-7" >
+        <addColumn tableName="del_classroom">
+            <column name="return_url" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-8" >
+        <addColumn tableName="del_classroom">
+            <column name="outer_manage" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-9" >
+        <addColumn tableName="del_classroom">
+            <column name="non_manager_enter_sound_off" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1632808751458-10" >
+        <addColumn tableName="del_classroom">
+            <column name="non_manager_enter_video_off" type="bit" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+
+</databaseChangeLog>

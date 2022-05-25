@@ -1,0 +1,383 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1611998609228-1">
+        <addColumn tableName="classroom">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-2">
+        <addColumn tableName="classroom_file">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_file" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-3">
+        <addColumn tableName="classroom_file_slide">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_file_slide" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-4">
+        <addColumn tableName="classroom_students">
+            <column name="created_by" type="varchar(255)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_students" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-5">
+        <addColumn tableName="classroom_survey">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_survey" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-6">
+        <addColumn tableName="classroom_survey_answer">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_survey_answer" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-7">
+        <addColumn tableName="course">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="course" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-8">
+        <addColumn tableName="del_classroom">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_classroom" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-9">
+        <addColumn tableName="del_classroom_students">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_classroom_students" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-10">
+        <addColumn tableName="del_course">
+            <column name="created_by" type="varchar(50)" defaultValue="OLD">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_course" columnName="created_by"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-11">
+        <addColumn tableName="classroom">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-12">
+        <addColumn tableName="classroom_file">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-13">
+        <addColumn tableName="classroom_file_slide">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-14">
+        <addColumn tableName="classroom_students">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-15">
+        <addColumn tableName="classroom_survey">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-16">
+        <addColumn tableName="classroom_survey_answer">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-17">
+        <addColumn tableName="course">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-18">
+        <addColumn tableName="del_classroom">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-19">
+        <addColumn tableName="del_classroom_students">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-20">
+        <addColumn tableName="del_course">
+            <column name="created_date" type="tinyblob" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-21">
+        <addColumn tableName="classroom">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-22">
+        <addColumn tableName="classroom_file">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-23">
+        <addColumn tableName="classroom_file_slide">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-24">
+        <addColumn tableName="classroom_students">
+            <column name="last_modified_by" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-25">
+        <addColumn tableName="classroom_survey">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-26">
+        <addColumn tableName="classroom_survey_answer">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-27">
+        <addColumn tableName="course">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-28">
+        <addColumn tableName="del_classroom">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-29">
+        <addColumn tableName="del_classroom_students">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-30">
+        <addColumn tableName="del_course">
+            <column name="last_modified_by" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-31">
+        <addColumn tableName="classroom">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-32">
+        <addColumn tableName="classroom_file">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-33">
+        <addColumn tableName="classroom_file_slide">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-34">
+        <addColumn tableName="classroom_students">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-35">
+        <addColumn tableName="classroom_survey">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-36">
+        <addColumn tableName="classroom_survey_answer">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-37">
+        <addColumn tableName="course">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-38">
+        <addColumn tableName="del_classroom">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-39">
+        <addColumn tableName="del_classroom_students">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-40">
+        <addColumn tableName="del_course">
+            <column name="last_modified_date" type="tinyblob"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-41">
+        <addColumn tableName="classroom">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-42">
+        <addColumn tableName="classroom_file">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_file" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-43">
+        <addColumn tableName="classroom_file_slide">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_file_slide" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-44">
+        <addColumn tableName="classroom_students">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_students" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-45">
+        <addColumn tableName="classroom_survey">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_survey" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-46">
+        <addColumn tableName="classroom_survey_answer">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="classroom_survey_answer" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-47">
+        <addColumn tableName="course">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="course" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-48">
+        <addColumn tableName="del_classroom">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_classroom" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-49">
+        <addColumn tableName="del_classroom_students">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_classroom_students" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-50">
+        <addColumn tableName="del_course">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_course" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-51">
+        <addColumn tableName="del_jhi_user">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="del_jhi_user" columnName="version"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611998609228-52">
+        <addColumn tableName="jhi_user">
+            <column name="version" type="bigint" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <dropDefaultValue tableName="jhi_user" columnName="version"/>
+    </changeSet>
+
+    <changeSet id="hossein (generated)" author="1611998609228-53">
+        <update tableName="classroom">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="classroom_file">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="classroom_file_slide">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="classroom_students">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="classroom_survey">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="classroom_survey_answer">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="course">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="del_classroom">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="del_classroom_students">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+        <update tableName="del_course">
+            <column name="created_date" value="2010-01-01 00:00:00"/>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

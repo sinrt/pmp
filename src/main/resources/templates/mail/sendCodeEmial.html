@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.activation.title}">ruBru creation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/iranian-sans" type="text/css"/>
+    <style>
+        .codeContainer {
+            text-align: center;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            background-color: #e2f0f0;
+            width: 30%;
+            height: 48% !important;
+            margin: auto;
+            font-size: 35px;
+        }
+        @media only screen and (max-width: 600px) {
+            .codeContainer {
+                background-color: green;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="background-color:#88a288;padding:15px 0 20px 0">
+    <h1 style="text-align:center;font-family: 'IranianSansRegular';">روبرو</h1>
+    <h2 style="text-align:center;font-family: 'IranianSansRegular';">وارد شوید و روبرو ملاقات کنید</h2>
+</div>
+<p style="text-align:center;font-size: 19px; font-family: 'IranianSansRegular';">
+    این کد برای تائید ایمیل شما ارسال گردیده است، با وارد نمودن آن در روبرو میتواند وارد مرحله بعد شده و کلمه عبور مناسب
+    خود را تعیین نمائید
+</p>
+<p style="text-align:right;
+width: 30%;
+margin: auto;margin-bottom:20px;font-size: 19px;font-family: 'IranianSansRegular';"> :کد تایید شما</p>
+<p class="codeContainer">
+    <a th:text="@{|${user.activationKey}|}">Login link</a>
+</p>
+<p style="font-size: 15px;margin-top:20px;text-align:center;font-family: 'IranianSansRegular';">
+    لطفا توجه داشته باشید که این کد فقط 15 دقیقه معتبر است.
+</p>
+<p style="font-size: 19px;text-align:center;font-family: 'IranianSansRegular';">
+    در صورت هرگونه مشکل یا سوال برای ورود به سیستم کافی است به این ایمیل پاسخ دهید یا با ایمیل زیر مکاتبه نمایید.
+</p><p style="font-size: 19px;text-align:center;font-family: 'IranianSansRegular';">
+    rubru-support@rubru.me
+</p>
+<p style="font-size: 16px;text-align:right;text-align: right;
+padding-right: 19%;font-family: 'IranianSansRegular';">
+    <span>ارادتمند </span>
+    <br/>
+    <em>تیم روبرو</em>
+</p>
+</body>
+</html>

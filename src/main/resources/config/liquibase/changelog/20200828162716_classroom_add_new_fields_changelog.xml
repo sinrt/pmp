@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1598632049834-1">
+        <addColumn tableName="classroom">
+            <column name="disable_file_transfer" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-2">
+        <addColumn tableName="classroom">
+            <column name="enable_subscriber_direct_enter" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-3">
+        <addColumn tableName="classroom">
+            <column name="hide_global_chat" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-4">
+        <addColumn tableName="classroom">
+            <column name="hide_participants_list" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-5">
+        <addColumn tableName="classroom">
+            <column name="hide_private_chat" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-6">
+        <addColumn tableName="classroom">
+            <column name="hide_publish_permit" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-7">
+        <addColumn tableName="classroom">
+            <column name="hide_sound_sensitive" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-8">
+        <addColumn tableName="classroom">
+            <column name="max_user_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1598632049834-9">
+        <addColumn tableName="classroom">
+            <column name="publisher_must_enter_first" type="bit"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

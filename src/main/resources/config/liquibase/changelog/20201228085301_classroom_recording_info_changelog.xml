@@ -1,0 +1,57 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1609145599166-1">
+        <dropTable tableName="classroom_recording_info"/>
+
+        <createTable tableName="classroom_recording_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="classroom_recording_infoPK"/>
+            </column>
+            <column name="content_type" type="VARCHAR(150)"/>
+            <column name="custom_layout" type="VARCHAR(200)"/>
+            <column name="download_base_url" type="VARCHAR(300)"/>
+            <column name="duration" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="file_size" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="final_time_stamp" type="BIGINT"/>
+            <column name="has_audio" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="has_video" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="output_mode" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reason" type="VARCHAR(50)"/>
+            <column name="recording_id" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recording_layout" type="VARCHAR(50)"/>
+            <column name="recording_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="resolution" type="VARCHAR(20)"/>
+            <column name="rubru_session_id" type="BIGINT"/>
+            <column name="rubru_session_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="saved_id" type="VARCHAR(50)"/>
+            <column name="start_time" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_time_stamp" type="BIGINT"/>
+            <column name="status" type="VARCHAR(10)"/>
+            <column name="stop_time_stamp" type="BIGINT"/>
+            <column name="storage_status" type="INT"/>
+            <column name="store_date_time" type="datetime"/>
+            <column name="sub_path" type="VARCHAR(50)"/>
+            <column name="classroom_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

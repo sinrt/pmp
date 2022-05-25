@@ -1,0 +1,85 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="hossein (generated)" id="1604510296036-1">
+        <createTable tableName="classroom_survey">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="classroom_surveyPK"/>
+            </column>
+            <column name="question" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(9)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="survey_type" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="classroom_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1604510296036-2">
+        <createTable tableName="classroom_survey_answer">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="classroom_survey_answerPK"/>
+            </column>
+            <column name="answer_date_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="answer_text" type="VARCHAR(500)"/>
+            <column name="client_id" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="token" type="VARCHAR(200)"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="classroom_survey_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="selected_option_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1604510296036-3">
+        <createTable tableName="classroom_survey_option">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="classroom_survey_optionPK"/>
+            </column>
+            <column name="option_order" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="option_text" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="classroom_survey_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="hossein (generated)" id="1604510296036-4">
+        <addForeignKeyConstraint baseColumnNames="classroom_survey_id" baseTableName="classroom_survey_answer"
+                                 constraintName="FK2i9g8kmjn9sel32cssr32t1qk" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="classroom_survey"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1604510296036-5">
+        <addForeignKeyConstraint baseColumnNames="classroom_id" baseTableName="classroom_survey"
+                                 constraintName="FK7wg3pkyjbfbtl329ttirj35d6" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="classroom"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1604510296036-6">
+        <addForeignKeyConstraint baseColumnNames="selected_option_id" baseTableName="classroom_survey_answer"
+                                 constraintName="FKbjl3t67ah1rk57bj0ok44ph7i" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="classroom_survey_option"/>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1604510296036-7">
+        <addForeignKeyConstraint baseColumnNames="classroom_survey_id" baseTableName="classroom_survey_option"
+                                 constraintName="FKe3m06nwcgs42ggbkn7p1xqcj3" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="classroom_survey"/>
+    </changeSet>
+
+</databaseChangeLog>

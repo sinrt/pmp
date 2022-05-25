@@ -1,0 +1,386 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+    <!--<changeSet author="mehdade (generated)" id="1561451768337-12">
+        <createTable tableName="purchase_status">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="purchase_statusPK"/>
+            </column>
+            <column name="family" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="purchase_date" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="purchase_date_time" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="serivce_price" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tracking_code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_type_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>-->
+    <!--<changeSet author="Sina-Pc (generated)" id="1575114001866-2">
+        <addColumn tableName="purchase_status">
+            <column name="no_time_limit" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1575462680116-2">
+        <addColumn tableName="purchase_status">
+            <column name="optional_title" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1578129817135-4">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="first_name" tableName="purchase_status"/>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-2">
+        <addColumn tableName="purchase_status">
+            <column name="screen_share_frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-5">
+        <addColumn tableName="purchase_status">
+            <column name="screen_share_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580121379967-8">
+        <addColumn tableName="purchase_status">
+            <column name="screen_share_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-2">
+        <addColumn tableName="purchase_status">
+            <column name="resolution_height" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1580207463891-5">
+        <addColumn tableName="purchase_status">
+            <column name="resolution_width" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="mehdade (generated)" id="1561451768337-30">
+        <addUniqueConstraint columnNames="tracking_code" constraintName="UC_PURCHASE_STATUSTRACKING_CODE_COL" tableName="purchase_status"/>
+    </changeSet>
+    <changeSet author="mehdade (generated)" id="1561451768337-38">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="purchase_status" constraintName="FK79yhbta8hofakbtgyomarh0x0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>-->
+    <changeSet id="20191207083134-1" author="jhipster">
+        <createTable tableName="signal_server_log">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="action" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="jhi_check" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="description" type="varchar(2500)">
+                <constraints nullable="true"/>
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1575715592949-4">
+        <dropColumn columnName="description" tableName="signal_server_log"/>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1575716932730-1">
+        <addColumn tableName="signal_server_log">
+            <column name="description" type="varchar(600)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1576056630411-4">
+        <dropColumn columnName="description" tableName="signal_server_log"/>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1576057263601-1">
+        <addColumn tableName="signal_server_log">
+            <column name="description" type="varchar(2500)"/>
+        </addColumn>
+    </changeSet>
+     <!--<changeSet author="Sina-Pc (generated)" id="1571648519037-1">
+         <addColumn tableName="purchase_status">
+             <column name="dicount_price" type="integer"/>
+         </addColumn>
+     </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-2">
+         <addColumn tableName="purchase_status">
+             <column name="discount_code" type="varchar(255)"/>
+         </addColumn>
+     </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1571648519037-3">
+        <addColumn tableName="purchase_status">
+            <column name="discount_title" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-4">
+         <addColumn tableName="purchase_status">
+             <column name="final_price" type="integer"/>
+         </addColumn>
+     </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1571648519037-5">
+        <addColumn tableName="purchase_status">
+            <column name="invoice_number" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-6">
+         <addColumn tableName="purchase_status">
+             <column name="last_plan" type="bit"/>
+         </addColumn>
+     </changeSet>
+       <changeSet author="Sina-Pc (generated)" id="1571648519037-7">
+           <addColumn tableName="purchase_status">
+               <column name="payment_code" type="varchar(255)"/>
+           </addColumn>
+       </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1571648519037-8">
+        <addColumn tableName="purchase_status">
+            <column name="payment_discount" type="integer"/>
+        </addColumn>
+    </changeSet>
+      <changeSet author="Sina-Pc (generated)" id="1571648519037-9">
+          <addColumn tableName="purchase_status">
+              <column name="payment_price" type="integer"/>
+          </addColumn>
+      </changeSet>
+      <changeSet author="Sina-Pc (generated)" id="1571648519037-10">
+          <addColumn tableName="purchase_status">
+              <column name="payment_title" type="varchar(255)"/>
+          </addColumn>
+      </changeSet>
+      <changeSet author="Sina-Pc (generated)" id="1571648519037-11">
+          <addColumn tableName="purchase_status">
+              <column name="plan_finish_date" type="tinyblob"/>
+          </addColumn>
+      </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-12">
+         <addColumn tableName="purchase_status">
+             <column name="plan_price_with_discount" type="integer"/>
+         </addColumn>
+     </changeSet>
+      <changeSet author="Sina-Pc (generated)" id="1571648519037-13">
+          <addColumn tableName="purchase_status">
+              <column name="price_after_vip_discount" type="integer"/>
+          </addColumn>
+      </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-14">
+         <addColumn tableName="purchase_status">
+             <column name="transaction_reference_id" type="varchar(255)"/>
+         </addColumn>
+     </changeSet>
+     <changeSet author="Sina-Pc (generated)" id="1571648519037-15">
+         <addColumn tableName="purchase_status">
+             <column name="value_added" type="float"/>
+         </addColumn>
+     </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1571655473082-1">
+        <addColumn tableName="purchase_log">
+            <column name="unit_price" type="integer"/>
+        </addColumn>
+    </changeSet>
+<!--    <changeSet author="Sina-Pc (generated)" id="1571657115467-3">-->
+<!--        <dropForeignKeyConstraint baseTableName="purchase_status" constraintName="FK79yhbta8hofakbtgyomarh0x0"/>-->
+<!--    </changeSet>-->
+    <!--<changeSet author="Sina-Pc (generated)" id="1571657115467-4">
+        <dropColumn columnName="service_type_id" tableName="purchase_status"/>
+    </changeSet>-->
+   <!-- <changeSet author="Sina-Pc (generated)" id="1571657696723-1">
+        <addColumn tableName="purchase_status">
+            <column name="user_id" type="bigint"/>
+        </addColumn>
+    </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1572183716851-1">
+        <addColumn tableName="service_type">
+            <column name="session_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+   <!-- <changeSet author="Sina-Pc (generated)" id="1572873103167-1">
+        <addColumn tableName="purchase_status">
+            <column name="session_count" type="integer"/>
+        </addColumn>
+    </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1572875436032-1">
+        <addColumn tableName="purchase_log">
+            <column name="session_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+  <!--  <changeSet author="Sina-Pc (generated)" id="1572946667813-3">
+        <dropUniqueConstraint constraintName="UC_PURCHASE_STATUSTRACKING_CODE_COL" tableName="purchase_status"/>
+    </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1572957759397-1">
+        <addColumn tableName="purchase_log">
+            <column name="plan_days_count" type="integer"/>
+        </addColumn>
+    </changeSet>
+  <!--  <changeSet author="Sina-Pc (generated)" id="1573296117499-1">
+        <addColumn tableName="purchase_status">
+            <column name="concur_videos" type="integer"/>
+        </addColumn>
+    </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1573297749634-1">
+        <addColumn tableName="purchase_log">
+            <column name="concur_videos" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1573384160473-1">
+        <addColumn tableName="purchase_log">
+            <column name="concur_users" type="integer"/>
+        </addColumn>
+    </changeSet>
+<!--    <changeSet author="Sina-Pc (generated)" id="1573384160473-2">-->
+<!--        <addColumn tableName="purchase_status">-->
+<!--            <column name="concur_users" type="integer"/>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+
+    <changeSet author="Sina-Pc (generated)" id="1573888269843-1">
+        <addColumn tableName="service_type">
+            <column name="private_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1573888269843-2">
+        <addColumn tableName="service_type">
+            <column name="public_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>
+   <!-- <changeSet author="Sina-Pc (generated)" id="1573889408786-1">
+        <addColumn tableName="purchase_status">
+            <column name="private_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1573889408786-2">
+        <addColumn tableName="purchase_status">
+            <column name="public_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>-->
+    <changeSet author="Sina-Pc (generated)" id="1573890031614-1">
+        <addColumn tableName="purchase_log">
+            <column name="private_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1573890031614-2">
+        <addColumn tableName="purchase_log">
+            <column name="public_branded_session" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1574838213937-1">
+        <addColumn tableName="service_type">
+            <column name="frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1574838213937-2">
+        <addColumn tableName="service_type">
+            <column name="resolution" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1574838861956-1">
+        <addColumn tableName="purchase_log">
+            <column name="frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1574838861956-2">
+        <addColumn tableName="purchase_log">
+            <column name="resolution" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+   <!-- <changeSet author="Sina-Pc (generated)" id="1574840031147-1">
+        <addColumn tableName="purchase_status">
+            <column name="frame_rate" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1574840031147-2">
+        <addColumn tableName="purchase_status">
+            <column name="resolution" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="sadra (generated)" id="1585062004123-10">
+        <dropColumn columnName="service_type_id" tableName="purchase_status"/>
+    </changeSet>-->
+  <!--  <changeSet author="Sina-Pc (generated)" id="1565698499008-1">
+        <addColumn tableName="course">
+            <column name="teacher_pan" type="bit"/>
+        </addColumn>
+    </changeSet>-->
+<!--    <changeSet author="sadra (generated)" id="1585337198330-1">-->
+<!--        <addColumn tableName="payment_period">-->
+<!--            <column name="active" type="bit"/>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="sadra (generated)" id="1585337198330-2">-->
+<!--        <addColumn tableName="payment_period">-->
+<!--            <column name="discount_percent" type="integer">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="sadra (generated)" id="1585337198330-3">-->
+<!--        <addColumn tableName="payment_period">-->
+<!--            <column name="panel_days" type="integer">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+    <changeSet author="sadra (generated)" id="1585398427562-1">
+        <addColumn tableName="service_type">
+            <column name="service_def" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="sadra (generated)" id="1585587258491-1">
+        <addColumn tableName="purchase_log">
+            <column name="teacher_panel" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="sadra (generated)" id="1585587258491-2">
+        <addColumn tableName="purchase_status">
+            <column name="teacher_panel" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="sadra (generated)" id="1585587258491-3">
+        <addColumn tableName="service_type">
+            <column name="teacher_panel" type="bit"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="sadra (generated)" id="1585640467585-1">
+        <addColumn tableName="service_type">
+            <column name="priority" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1593000687901-1">
+        <addColumn tableName="service_type">
+            <column name="total_concur_users" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Sina-Pc (generated)" id="1593001222090-1">
+        <addColumn tableName="purchase_log">
+            <column name="total_concur_users" type="integer"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

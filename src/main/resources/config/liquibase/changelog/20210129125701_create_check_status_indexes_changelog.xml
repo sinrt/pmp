@@ -1,0 +1,56 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="hossein (generated)" id="1611925037076-1">
+        <createIndex indexName="idx_classroom_client" tableName="classroom_blocked_client">
+            <column name="classroom_id"/>
+            <column name="client_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-2">
+        <createIndex indexName="idx_classroom_student_token" tableName="classroom_students">
+            <column name="token"/>
+            <column name="classroom_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-3">
+        <createIndex indexName="idx_classroom_user" tableName="classroom_blocked_client">
+            <column name="classroom_id"/>
+            <column name="blocker_user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-4">
+        <createIndex indexName="idx_cri_classroom_status" tableName="classroom_recording_info">
+            <column name="classroom_id"/>
+            <column name="status"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-5">
+        <createIndex indexName="idx_osp_classroom" tableName="rubru_session">
+            <column name="classroom_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-6">
+        <createIndex indexName="idx_osp_creator" tableName="rubru_session">
+            <column name="creator_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-7">
+        <createIndex indexName="idx_session_participant_token" tableName="rubru_session_participant">
+            <column name="user_token"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-8">
+        <createIndex indexName="idx_usr_last_plan" tableName="purchase_status">
+            <column name="user_id"/>
+            <column name="last_plan"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hossein (generated)" id="1611925037076-9">
+        <dropIndex indexName="idx_osp_ovws_url" tableName="rubru_session"/>
+        <createIndex indexName="idx_osp_ovws_url" tableName="rubru_session">
+            <column name="ovws_url"/>
+            <column name="end_date"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
